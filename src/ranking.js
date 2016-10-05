@@ -93,8 +93,8 @@ var Ranking = function()
 	return o;
 }
 
-Ranking.saveScore = function(score)
+/*Ranking.saveScore = function(score)
 {
 	console.log("Tentando salvar " + score + " como score.");
 	parent.GameService.saveScore("pontos", user.id, score, function(sucess) {console.log(sucess);});
-}
+}*/

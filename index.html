@@ -44,7 +44,7 @@
         var scores;
         var users;
 
-        document.domain = "noas.com.br";
+        //document.domain = "noas.com.br";
 
 		function init() 
 		{
@@ -64,11 +64,11 @@
 			preloader = new Preloader(manifest);
             preloader.initialize();
 
-            getLoggedUser();
-            getTopScores();
+            /*getLoggedUser();
+            getTopScores();*/
 		}
 
-        function getLoggedUser(){
+        /*function getLoggedUser(){
             parent.GameService.getLoggedUser(function(u){
                 user = u;
             });
@@ -94,7 +94,7 @@
             for(var i = 0; i < s.length; i++) 
                 arr[i] = s[i].user;
             return arr.toString();
-        }
+        }*/
 		
 		// MÉTODO CHAMADO QUANDO O PRELOADER TERMINA DE CARREGAR TODOS OS ASSETS
 		function inicializaGame()
@@ -130,7 +130,7 @@
             btranking.on("click", rankingHandler);
 			MouseSettings.configure([btsettings, btranking], "normal");
 
-        	stage.addChild(btsettings, btranking, game);
+        	stage.addChild(btsettings, /*btranking, */game);
         }
 
         function rankingHandler(event)

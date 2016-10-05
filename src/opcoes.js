@@ -47,7 +47,7 @@ var Opcoes = function()
 	function homeHandler(event)
 	{
 		Common.clearInterval();
-		Ranking.saveScore(Common.points + Common.atualPoints);
+		//Ranking.saveScore(Common.points + Common.atualPoints);
 
 		stage.removeAllChildren();
         inicializaGame();
