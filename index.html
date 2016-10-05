@@ -63,10 +63,15 @@
             
             preloader = new Preloader(manifest);
             preloader.initialize();
-            
+
             /*getLoggedUser();
             getTopScores();*/
 		}
+
+        window.onunload = function()
+        {
+            stopSounds();
+        }
 
         /*function getLoggedUser(){
             parent.GameService.getLoggedUser(function(u){
