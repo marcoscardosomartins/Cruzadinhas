@@ -13,8 +13,8 @@
 	<meta name="authoring-tool" content="Adobe_Animate_CC">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Cruzadinhas</title>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 	<script src="cruzadinhas.js"></script>
     <script src="core/common.js"></script>
     <script src="core/content.js"></script>
@@ -51,19 +51,20 @@
 			canvas = document.getElementById("canvas");
 			stage = new createjs.Stage(canvas);
 
-	        stage.enableMouseOver(30);
+	        //stage.enableMouseOver(30);
 
 			createjs.Ticker.setFPS(60);
 			createjs.Ticker.addEventListener("tick", tick);	
 
-            wide = window.innerWidth > Common.limitHorizontal;
+            //wide = window.innerWidth > Common.limitHorizontal;
 
             reset();
 			onResize();
-
-			preloader = new Preloader(manifest);
+            
+            preloader = new Preloader(manifest);
             preloader.initialize();
 
+            alert("Tudo Certo");
             /*getLoggedUser();
             getTopScores();*/
 		}
