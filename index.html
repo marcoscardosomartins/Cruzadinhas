@@ -51,12 +51,12 @@
 			canvas = document.getElementById("canvas");
 			stage = new createjs.Stage(canvas);
 
-	        //stage.enableMouseOver(30);
+	        stage.enableMouseOver(30);
 
 			createjs.Ticker.setFPS(60);
 			createjs.Ticker.addEventListener("tick", tick);	
 
-            //wide = window.innerWidth > Common.limitHorizontal;
+            wide = window.innerWidth > Common.limitHorizontal;
 
             reset();
 			onResize();

@@ -116,7 +116,7 @@ Preloader.prototype.handleFileLoad = function(event) {};
 Preloader.prototype.handleComplete = function(event)
 {
     // Remove the container
-    //stage.removeChild(container);
+    stage.removeChild(container);
     // Inicialize the game
-    //inicializaGame();
+    inicializaGame();
 };
