@@ -150,7 +150,7 @@ var Identificacao = function()
         indicacao.set({x:stage.width * 0.5 - 110, y:stage.height - 40});
         concentracao.set({x:stage.width * 0.5 + 110, y:stage.height - 40});
 
-        if (window.innerWidth < 550)
+        if (window.innerWidth < 720)
         	noas.set({x:100, y:45, scaleX:1, scaleY: 1});
         else
         	noas.set({x:stage.width - 70, y:stage.height - 40, scaleX:0.66, scaleY: 0.66});
@@ -210,7 +210,7 @@ var Abertura = function()
         bola.set({scaleX:scale, scaleY:scale, x:window.innerWidth - (bola.width * 0.5) * horizontalScale, y:window.innerHeight - (bola.height * 0.75) * verticalScale});
         joaninha.set({scaleX:scale, scaleY:scale, x:middleX, y:joaninha.height * 0.5 * verticalScale});
 
-        if (window.innerWidth < 550)
+        if (window.innerWidth < 720)
 			identificationBar.invisible(0);
 		else 
 			identificationBar.invisible(1);
