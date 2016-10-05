@@ -116,7 +116,7 @@ var Game = function()
         if (bthelp)
             bthelp.set({x:stage.width - 40, y:stage.height - 40});
         if (btclean)
-            btclean.set({x:stage.width - 110, y:stage.height - 40});
+            btclean.set({x:40, y:stage.height - 40});
     	if (help)
     		help.update();
     	if (level)

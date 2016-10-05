@@ -40,9 +40,9 @@ var Level = function(incLevel = true)
 	// método de atualização
 	o.update = function(event)
 	{
-		levelTimer.set({x:window.innerWidth - 40 /** scale*/, y: middleY + 75 /** scale*/, /*scaleX:scale, scaleY:scale*/});
-		levelPoints.set({x:window.innerWidth - 40 /** scale*/, y: middleY - 75 /** scale*/, /*scaleX:scale, scaleY:scale*/});
-		levelCounter.set({x:window.innerWidth - 40 /** scale*/, y: middleY, /*scaleX:scale, scaleY:scale*/});
+		levelTimer.set({x:window.innerWidth - 40 * scale, y: middleY + 75 * scale, scaleX:scale, scaleY:scale});
+		levelPoints.set({x:window.innerWidth - 40 * scale, y: middleY - 75 * scale, scaleX:scale, scaleY:scale});
+		levelCounter.set({x:window.innerWidth - 40 * scale, y: middleY, scaleX:scale, scaleY:scale});
 
 		level.set({x:middleX, y:middleY, scaleX:scale, scaleY:scale});
 	}
