@@ -16,9 +16,9 @@
         Noas Team
     </author>
   
-  <gap:platform name="ios" />
+  <!--<gap:platform name="ios" />
+  <gap:platform name="winphone" />-->
   <gap:platform name="android" />
-  <gap:platform name="winphone" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
