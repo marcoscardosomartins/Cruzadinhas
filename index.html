@@ -68,34 +68,6 @@
             getTopScores();*/
 		}
         
-        document.addEventListener("deviceready", onDeviceReady, false);
-        document.addEventListener("pause", onPause, false);
-        document.addEventListener("resume", onResume, false);
-        document.addEventListener("backbutton", onBackKeyDown, false);
-        document.addEventListener("menubutton", onMenuKeyDown, false);
-        document.addEventListener("searchbutton", onSearchKeyDown, false);
-        /*document.addEventListener("startcallbutton", onStartCall, false);
-        document.addEventListener("endcallbutton", onStopCall, false);
-        document.addEventListener("volumedownbutton", onVolumeDown, false);
-        document.addEventListener("volumeupbutton", onVolumeUp, false);*/
-        
-        function onDeviceReady() { alert("device ready"); }
-        function onPause() { alert("pause"); }
-        function onResume() { alert("resume"); }
-        function onMenuKeyDown() { alert("menu key down"); }
-        function onSearchKeyDown() { alert("search key down"); }
-
-        function onBackKeyDown() 
-        {
-            stopSounds();
-            navigator.app.exitApp();
-        }
-
-        window.onunload = function()
-        {
-            stopSounds();
-        }
-
         /*function getLoggedUser(){
             parent.GameService.getLoggedUser(function(u){
                 user = u;
@@ -127,8 +99,10 @@
 		// MÉTODO CHAMADO QUANDO O PRELOADER TERMINA DE CARREGAR TODOS OS ASSETS
 		function inicializaGame()
         {
-            /*if (!music)
-                music = playMusic("musica", -1, 0.5);*/
+            if (!music)
+                music = playMusic("musica", -1, 0.5);
+
+            music.volume = 0.5;
 
             setTimeout(playSound, 200, "titulosound");
 
@@ -206,6 +180,9 @@
                 informacoes.update();
             if (ranking)
                 ranking.update();
+
+            if (music)
+                document.hasFocus() ? music.play() : stopSounds();
 
         	stage.update();
         }

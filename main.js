@@ -196,6 +196,7 @@ var Abertura = function()
 			return;
 		// chama o método iniciaGame no objeto game
 		game.iniciaGame();
+        music.volume = 0.2;
 
         playLateSound("pop", Common.firstTime ? "instrucoes" : "fase1", 200);
 	}
