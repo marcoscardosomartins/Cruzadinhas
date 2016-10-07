@@ -24,9 +24,11 @@ var Opcoes = function()
 	var btmidiaoff 		= new Bitmap("midiaoff", {width:102, height:102}, preloader.queue, true);
 	var btfullscreenon 	= new Bitmap("fullscreenon", {width:102, height:102}, preloader.queue, true);
 	var btfullscreenoff = new Bitmap("fullscreenoff", {width:102, height:102}, preloader.queue, true);
+	var btclean 		= new Bitmap("cleanoptionbutton", {width:102, height:102}, preloader.queue, true);
 
-	MouseSettings.configure([bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff], "normal");
+	MouseSettings.configure([bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff, btclean], "normal");
 
+	btclean.on("click", cleanHandler);
 	bthome.on("click", homeHandler);
 	btinfo.on("click", infoHandler);
 
@@ -42,7 +44,16 @@ var Opcoes = function()
 
 	// 
 
-	o.addChild(shadow, label, background, btconfirm, bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff);
+	o.addChild(shadow, label, background, btconfirm, bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff, btclean);
+
+	function cleanHandler(event)
+    {
+    	if (level)
+        	level.clear();
+		stage.removeChild(opcoes);
+		opcoes = null;
+        playSound("pop");
+    }
 
 	function homeHandler(event)
 	{
@@ -157,12 +168,15 @@ var Opcoes = function()
 
 		var escala = window.innerWidth < Common.limitHorizontal ? 0.7 : 1;
 
-		bthome.set({x: middleX * 0.4, y: middleY, scaleX:escala, scaleY:escala});
-		btinfo.set({x: middleX * 0.8, y: middleY, scaleX:escala, scaleY:escala});
-		btmidiaon.set({x: middleX * 1.2, y: middleY, scaleX:escala, scaleY:escala});
-		btmidiaoff.set({x: middleX * 1.2, y: middleY, scaleX:escala, scaleY:escala});
-		btfullscreenon.set({x: middleX * 1.6, y: middleY, scaleX:escala, scaleY:escala});
-		btfullscreenoff.set({x: middleX * 1.6, y: middleY, scaleX:escala, scaleY:escala});
+		bthome.visible = btclean.visible = abertura != null ? false : true;
+
+		bthome.set({x: middleX * 0.2, y: middleY, scaleX:escala, scaleY:escala});
+		btinfo.set({x: middleX * 0.6, y: middleY, scaleX:escala, scaleY:escala});
+		btmidiaon.set({x: middleX, y: middleY, scaleX:escala, scaleY:escala});
+		btmidiaoff.set({x: middleX, y: middleY, scaleX:escala, scaleY:escala});
+		btfullscreenon.set({x: middleX * 1.4, y: middleY, scaleX:escala, scaleY:escala});
+		btfullscreenoff.set({x: middleX * 1.4, y: middleY, scaleX:escala, scaleY:escala});
+		btclean.set({x: middleX * 1.8, y: middleY, scaleX:escala, scaleY:escala});
 	}
 
 	Common.Tween(shadow, "show", {alpha:0.7});

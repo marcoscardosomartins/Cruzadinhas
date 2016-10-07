@@ -12,6 +12,7 @@ var manifest = [
       {src : "assets/images/simplebackground.png",type : createjs.LoadQueue.IMAGE, id : "simplebackground"},
       {src : "assets/images/background.png",    type : createjs.LoadQueue.IMAGE, id : "background"},
       {src : "assets/images/cleanbutton.png",   type : createjs.LoadQueue.IMAGE, id : "cleanbutton"},
+      {src : "assets/images/cleanoptionbutton.png",   type : createjs.LoadQueue.IMAGE, id : "cleanoptionbutton"},
       // opções do menu
       {src : "assets/images/home.png",            type : createjs.LoadQueue.IMAGE, id : "home"},
       {src : "assets/images/info.png",            type : createjs.LoadQueue.IMAGE, id : "info"},

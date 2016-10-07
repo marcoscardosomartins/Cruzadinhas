@@ -25,7 +25,7 @@ var Game = function()
             btclean = new Bitmap("cleanbutton", {width:64, height:64}, preloader.queue, true);
             btclean.on("click", cleanHandler);
 			MouseSettings.configure([bthelp, btclean], "normal");
-    		g.addChild(bthelp, btclean);
+    		g.addChild(bthelp);
     		
     		Common.points = 0;
     	}
