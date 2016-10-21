@@ -48,16 +48,26 @@
 
 		function init() 
 		{
+            alert("inicio");
 			canvas = document.getElementById("canvas");
+            alert(0);
 			stage = new createjs.Stage(canvas);
+            alert(1);
 	        stage.enableMouseOver(30);
+            alert(2);
 			createjs.Ticker.setFPS(60);
+            alert(3);
 			createjs.Ticker.addEventListener("tick", tick);	
+            alert(4);
             wide = window.innerWidth > Common.limitHorizontal;
+            alert(5);
             //reset();
 			onResize();
+            alert(6);
             preloader = new Preloader(manifest);
+            alert(7);
             preloader.initialize();
+            alert(8);
 		}
         
         window.onunload = function()
