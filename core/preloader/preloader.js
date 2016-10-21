@@ -35,6 +35,7 @@ Preloader.prototype.initialize = function()
  */
 Preloader.prototype.loadComplete = function(event)
 {
+    alert("inicio preloader");
 	var preQueue = this.preQueue;
 	this.logoCnec = new createjs.Bitmap(this.preQueue.getResult("logoCnec"));
 	this.logoCnec.x = 15;
@@ -115,6 +116,7 @@ Preloader.prototype.handleFileLoad = function(event) {};
  */
 Preloader.prototype.handleComplete = function(event)
 {
+    alert("preloader complete");
     // Remove the container
     //stage.removeChild(container);
     // Inicialize the game
