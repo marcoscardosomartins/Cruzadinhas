@@ -116,9 +116,9 @@ Preloader.prototype.handleFileLoad = function(event) {};
  */
 Preloader.prototype.handleComplete = function(event)
 {
-    alert("preloader complete");
+    //alert("preloader complete");
     // Remove the container
-    //stage.removeChild(container);
+    stage.removeChild(container);
     // Inicialize the game
-    //inicializaGame();
+    inicializaGame();
 };
