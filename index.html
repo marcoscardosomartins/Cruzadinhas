@@ -99,14 +99,15 @@
 			btsettings = new Bitmap("settingsbutton", {x:0, y:0, width:60, height:60}, preloader.queue, true);
 			btsettings.on("click", settingsHandler);
             // botão ranking
-            btranking = new Bitmap("trophy", {x:0, y:0, width:60, height:60}, preloader.queue, true);
-            btranking.on("click", rankingHandler);
-			MouseSettings.configure([btsettings, btranking], "normal");
+            /*btranking = new Bitmap("trophy", {x:0, y:0, width:60, height:60}, preloader.queue, true);
+            btranking.on("click", rankingHandler);*/
+			//MouseSettings.configure([btsettings, btranking], "normal");
+            MouseSettings.settings(btsettings, "normal");
 
         	stage.addChild(btsettings, /*btranking, */game);
         }
 
-        function rankingHandler(event)
+        /*function rankingHandler(event)
         {
             if (ranking || opcoes || informacoes || creditos || instrucoes || help || gameover || finalizacao || sucesso)
                 return;
@@ -115,7 +116,7 @@
 
             ranking = new Ranking();
             stage.addChild(ranking);
-        }
+        }*/
 
 		function settingsHandler(event)
 		{
