@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 canvas {
-	background: url(../../images/background.png) repeat-x center center fixed; 
+	background: url(images/background.png) repeat-x center center fixed; 
     height: 100vh;
     width: 100%;
 }
