@@ -27,7 +27,7 @@ Preloader.prototype.initialize = function()
 {
 	this.preQueue.on("complete", this.loadComplete, this);
 	//preQueue.addEventListener("complete", this.loadComplete);
-	this.preQueue.loadFile({src:"core/preloader/cnec.png", id:"logoCnec"});
+	this.preQueue.loadFile({src:"../core/preloader/cnec.png", id:"logoCnec"});
 };
 
 /**
