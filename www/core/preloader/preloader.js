@@ -2,6 +2,7 @@
  * @author Marcos Cardoso
  * @description construtor do objeto Preloader
  */
+var progresso = 0;
 var Preloader = function(manifest) 
 {
 	this.manifest = manifest;
@@ -86,6 +87,7 @@ Preloader.prototype.loadContent = function()
 	// Utilize:
 	this.queue.on("progress", this.handleProgress, this);
 	this.queue.on("complete", this.handleComplete, this);
+	this.queue.on("fileload", this.handleFileLoad, this);
 	// ao invés de:
     //this.queue.addEventListener("progress", this.handleProgress);
     //this.queue.addEventListener("complete", this.handleComplete);
@@ -104,12 +106,16 @@ Preloader.prototype.handleProgress = function(event)
     graphics.beginFill("#008ACA").drawRect(25 * scale, this.containerHeight * 0.6, Math.round(this.barWidth * event.progress), this.barHeight);
     // Update the progress
     label.text = "Carregando o jogo " + Math.round(100 * event.progress) + "%";
+    progresso = event.progress;
 };
 
 /**
  * Disparando quando um item é carregado
  */
-Preloader.prototype.handleFileLoad = function(event) {};
+Preloader.prototype.handleFileLoad = function(event) 
+{
+	alert("Progresso: " + progresso + " | Id: " + event.item.id);
+};
 
 /**
  * Disparado quando o carregamento de todos os itens é finalizado.
