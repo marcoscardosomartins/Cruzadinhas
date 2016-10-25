@@ -16,7 +16,7 @@ var Timer = function(campo, duracao)
 			{
 				Common.clearInterval();
 				Common.running = false;
-				game.gameOver();
+				game.gameOver(true);
 				playSound("wrong");
 				playLateSound("gameovertempo", 1000);
 			}

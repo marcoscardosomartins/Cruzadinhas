@@ -91,7 +91,7 @@ var Game = function()
     	}
     }
     // cria o game over quando o tempo acaba
-    g.gameOver = function(tempo = true)
+    g.gameOver = function(tempo)
     {
     	//if (tempo)
     		//game.removeAllChildren();

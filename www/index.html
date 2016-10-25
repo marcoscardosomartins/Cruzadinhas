@@ -33,7 +33,6 @@
     <script src="src/ajuda.js"></script>
     <script src="src/timer.js"></script>
 	<script src="main.js"></script>
-    <script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>
 	<script>
 		var canvas, stage, exportRoot;
 		var game, abertura, btsettings, btranking, level, opcoes, informacoes, instrucoes, creditos, sucesso, finalizacao, gameover, ranking, help;
@@ -49,26 +48,26 @@
 
 		function init() 
 		{
-            alert("inicio");
+            // alert("inicio");
 			canvas = document.getElementById("canvas");
-            alert(0);
+            // alert(0);
 			stage = new createjs.Stage(canvas);
-            alert(1);
+            // alert(1);
 	        stage.enableMouseOver(30);
-            alert(2);
+            // alert(2);
 			createjs.Ticker.setFPS(60);
-            alert(3);
+            // alert(3);
 			createjs.Ticker.addEventListener("tick", tick);	
-            alert(4);
+            // alert(4);
             wide = window.innerWidth > Common.limitHorizontal;
-            alert(5);
+            // alert(5);
             //reset();
 			onResize();
-            alert(6);
+            // alert(6);
             preloader = new Preloader(manifest);
-            alert(7);
+            // alert(7);
             preloader.initialize();
-            alert(8);
+            // alert(8);
 		}
         
         window.onunload = function()
@@ -241,7 +240,8 @@
         function stopSounds()
         {
             music.stop();
-            sound.stop();
+            if (sound)
+                sound.stop();
         }
         function playSound(id) 
         {

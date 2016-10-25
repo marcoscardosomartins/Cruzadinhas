@@ -1,6 +1,8 @@
 // OBJETO LEVEL
-var Level = function(incLevel = true)
+var Level = function(incLevel)
 {
+	if (incLevel == undefined)
+		incLevel = true;
 	// construtor principal
 	var o = new createjs.Container
 
@@ -30,6 +32,7 @@ var Level = function(incLevel = true)
 	// levelPoints.total.text = "Total " + Common.points + " pts";
 
 	var dragged;
+	var peca;
 	var interval = 0;
 	var alvos;
 
@@ -106,13 +109,16 @@ var Level = function(incLevel = true)
 	function removePeca(event)
 	{
 		var peca = event.currentTarget;
-		peca.alvo.filled = false;
-		peca.alvo.same = false;
-		peca.alvo.peca = null;
-		peca.alvo = null;
+		if (peca.alvo) 
+		{
+			peca.alvo.filled = false;
+			peca.alvo.same = false;
+			peca.alvo.peca = null;
+			peca.alvo = null;
+		}
 		level.removeChild(peca);
-
 		Common.atualPoints -= 10;
+		console.log("remove peca " + Common.atualPoints);
 		updatePontos();
 	}
 	// evento responsável por mover a peça de acordo com a posição do mouse
@@ -120,8 +126,8 @@ var Level = function(incLevel = true)
 	{
 		var point = level.globalToLocal(level.stage.mouseX, level.stage.mouseY);
 		
-		peca.x = point.x;
-		peca.y = point.y;
+		dragged.x = point.x;
+		dragged.y = point.y;
 	}
 	// evento disparado quando o mouse é solto no objeto level
 	function drop(event)
@@ -145,6 +151,7 @@ var Level = function(incLevel = true)
 					alvo.peca = dragged;
 					alvo.filled = true;
 					alvo.same = alvo.name == dragged.letra.text;
+					
 					Common.atualPoints += 10;
 
 					dropped = true;
