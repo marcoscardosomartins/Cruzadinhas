@@ -36,13 +36,15 @@
     <icon src="www/icons/icon-72-hdpi.png"   platform="android"    density="hdpi" />
     <icon src="www/icons/icon-96-xhdpi.png"  platform="android"    density="xhdpi" />
     
-    <!--<gap:splash src="www/screen/splash-LDPI.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="www/screen/splash-LDPI.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="www/screen/splash-MDPI.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="www/screen/splash-HDPI.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="www/screen/splash-XHDPI.png" gap:platform="android" gap:density="xhdpi" />-->
+    <gap:splash src="www/screen/splash-XHDPI.png" gap:platform="android" gap:density="xhdpi" />
 
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
-    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+    <!-- <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" /> -->
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="2.1.1" />
+    <!-- <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" /> -->
 
     <access origin="*"/> 
     <access origin="https://code.createjs.com/createjs-2015.11.26.min.js"/> 
