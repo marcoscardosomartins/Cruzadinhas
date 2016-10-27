@@ -35,7 +35,7 @@
 	<script src="main.js"></script>
 	<script>
 		var canvas, stage, exportRoot;
-		var game, abertura, btsettings, btranking, level, opcoes, informacoes, instrucoes, creditos, sucesso, finalizacao, gameover, ranking, help;
+		var game, abertura, btsettings, btinformacoes, level, opcoes, informacoes, instrucoes, creditos, sucesso, finalizacao, gameover, ranking, help;
         var isFullscreen = false;
         var allowMedia = true;
         var middleX, middleY;
@@ -46,27 +46,16 @@
 
 		function init() 
 		{
-            alert("inicio");
             canvas = document.getElementById("canvas");
-            // alert(0);
-            alert("Canvas: " + canvas);
             stage = new createjs.Stage(canvas);
-            // alert(1);
             stage.enableMouseOver(30);
-            // alert(2);
             createjs.Ticker.setFPS(60);
-            // alert(3);
             createjs.Ticker.addEventListener("tick", tick); 
-            // alert(4);
             wide = window.innerWidth > Common.limitHorizontal;
-            // alert(5);
             //reset();
             onResize();
-            // alert(6);
             preloader = new Preloader(manifest);
-            // alert(7);
             preloader.initialize();
-            // alert(8);
 		}
         
         window.onunload = function()
@@ -102,13 +91,31 @@
         	// botão configurações
 			btsettings = new Bitmap("settingsbutton", {x:0, y:0, width:60, height:60}, preloader.queue, true);
 			btsettings.on("click", settingsHandler);
-            // botão ranking
-            /*btranking = new Bitmap("trophy", {x:0, y:0, width:60, height:60}, preloader.queue, true);
-            btranking.on("click", rankingHandler);*/
-			//MouseSettings.configure([btsettings, btranking], "normal");
-            MouseSettings.settings(btsettings, "normal");
+            // botão informacoes
+            btinformacoes = new Bitmap("infoSmall", {x:0, y:0, width:60, height:60}, preloader.queue, true);
+            btinformacoes.on("click", infoHandler);
 
-        	stage.addChild(btsettings, /*btranking, */game);
+			MouseSettings.configure([btsettings, btinformacoes], "normal");
+
+        	stage.addChild(btsettings, btinformacoes, game);
+
+            btsettings.visible = false;
+            btinformacoes.visible = true;
+        }
+
+        function infoHandler(event)
+        {
+            if (informacoes || creditos)
+                return;
+
+            if (!informacoes)
+            {
+                informacoes = new Informacoes();
+                stage.addChild(informacoes);
+                informacoes.update();
+
+                playLateSound("pop", "informacoes", 200);
+            }
         }
 
         /*function rankingHandler(event)
@@ -150,8 +157,8 @@
                 creditos.update();
             if (btsettings)
                 btsettings.set({x:stage.width - 40, y:40});
-            if (btranking)
-                btranking.set({x:stage.width - 110, y:40});
+            if (btinformacoes)
+                btinformacoes.set({x:stage.width - 40, y:40});
             if (informacoes)
                 informacoes.update();
             if (ranking)

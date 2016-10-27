@@ -20,19 +20,19 @@ var Opcoes = function()
 	//OPÇÕES DO MENU
 	var bthome 			= new Bitmap("home", {width:102, height:102}, preloader.queue, true);
 	var btinfo 			= new Bitmap("info", {width:102, height:102}, preloader.queue, true);
-	var btmidiaon 		= new Bitmap("midiaon", {width:102, height:102}, preloader.queue, true);
+	/*var btmidiaon 		= new Bitmap("midiaon", {width:102, height:102}, preloader.queue, true);
 	var btmidiaoff 		= new Bitmap("midiaoff", {width:102, height:102}, preloader.queue, true);
 	var btfullscreenon 	= new Bitmap("fullscreenon", {width:102, height:102}, preloader.queue, true);
-	var btfullscreenoff = new Bitmap("fullscreenoff", {width:102, height:102}, preloader.queue, true);
+	var btfullscreenoff = new Bitmap("fullscreenoff", {width:102, height:102}, preloader.queue, true);*/
 	var btclean 		= new Bitmap("cleanoptionbutton", {width:102, height:102}, preloader.queue, true);
 
-	MouseSettings.configure([bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff, btclean], "normal");
+	MouseSettings.configure([bthome, btinfo, /*btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff,*/ btclean], "normal");
 
 	btclean.on("click", cleanHandler);
 	bthome.on("click", homeHandler);
 	btinfo.on("click", infoHandler);
 
-	btmidiaon.on("click", midiaHandler);
+	/*btmidiaon.on("click", midiaHandler);
 	btmidiaoff.on("click", midiaHandler);
 
 	btfullscreenon.on("click", fullscreenHandler);
@@ -40,11 +40,11 @@ var Opcoes = function()
 
 
 	toggleButtons(isFullscreen ? "fullscreenoff" : "fullscreenon");
-	toggleAudio(!allowMedia   ? "midiaon" : "");
+	toggleAudio(!allowMedia   ? "midiaon" : "");*/
 
 	// 
 
-	o.addChild(shadow, label, background, btconfirm, bthome, btinfo, btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff, btclean);
+	o.addChild(shadow, label, background, btconfirm, bthome, btinfo, /*btmidiaoff, btmidiaon, btfullscreenon, btfullscreenoff,*/ btclean);
 
 	function cleanHandler(event)
     {
@@ -83,7 +83,7 @@ var Opcoes = function()
         }
 	}
 
-	function midiaHandler(event)
+	/*function midiaHandler(event)
 	{
 		toggleAudio(event.currentTarget.name);
         if (allowMedia)
@@ -144,7 +144,7 @@ var Opcoes = function()
 
             //isFullscreen = false;
         }
-    }
+    }*/
 
 	function confirmHandler(event)
 	{
@@ -170,13 +170,17 @@ var Opcoes = function()
 
 		bthome.visible = btclean.visible = abertura != null ? false : true;
 
-		bthome.set({x: middleX * 0.2, y: middleY, scaleX:escala, scaleY:escala});
+		/*bthome.set({x: middleX * 0.2, y: middleY, scaleX:escala, scaleY:escala});
 		btinfo.set({x: middleX * 0.6, y: middleY, scaleX:escala, scaleY:escala});
 		btmidiaon.set({x: middleX, y: middleY, scaleX:escala, scaleY:escala});
 		btmidiaoff.set({x: middleX, y: middleY, scaleX:escala, scaleY:escala});
 		btfullscreenon.set({x: middleX * 1.4, y: middleY, scaleX:escala, scaleY:escala});
 		btfullscreenoff.set({x: middleX * 1.4, y: middleY, scaleX:escala, scaleY:escala});
-		btclean.set({x: middleX * 1.8, y: middleY, scaleX:escala, scaleY:escala});
+		btclean.set({x: middleX * 1.8, y: middleY, scaleX:escala, scaleY:escala});*/
+
+		bthome.set({x: middleX * 0.6, y: middleY, scaleX:escala, scaleY:escala});
+		btinfo.set({x: middleX, y: middleY, scaleX:escala, scaleY:escala});
+		btclean.set({x: middleX * 1.4, y: middleY, scaleX:escala, scaleY:escala});
 	}
 
 	Common.Tween(shadow, "show", {alpha:0.7});

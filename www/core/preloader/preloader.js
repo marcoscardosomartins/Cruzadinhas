@@ -114,7 +114,7 @@ Preloader.prototype.handleProgress = function(event)
  */
 Preloader.prototype.handleFileLoad = function(event) 
 {
-	alert("Progresso: " + progresso + " | Id: " + event.item.id);
+	//alert("Progresso: " + progresso + " | Id: " + event.item.id);
 };
 
 /**

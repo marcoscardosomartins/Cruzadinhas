@@ -26,6 +26,9 @@ var Game = function()
             btclean.on("click", cleanHandler);
 			MouseSettings.configure([bthelp, btclean], "normal");
     		g.addChild(bthelp);
+
+            btsettings.visible = true;
+            btinformacoes.visible = false;
     		
     		Common.points = 0;
     	}

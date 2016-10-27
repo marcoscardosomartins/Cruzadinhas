@@ -22,9 +22,9 @@
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
 
-    <preference name="SplashScreen" value="www/icons/splash-XHDPI.png" />
+    <preference name="SplashScreen" value="www/screen/splash.png" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashMaintainAspectRatio" value="true" />            <!-- android -->
+    <preference name="SplashMaintainAspectRatio" value="false" />            <!-- android -->
 
     <preference name="android-minSdkVersion"      value="10" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
@@ -36,10 +36,10 @@
     <icon src="www/icons/icon-72-hdpi.png"   platform="android"    density="hdpi" />
     <icon src="www/icons/icon-96-xhdpi.png"  platform="android"    density="xhdpi" />
     
-    <gap:splash src="www/icons/splash-LDPI.png"  gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="www/icons/splash-MDPI.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="www/icons/splash-HDPI.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="www/icons/splash-XHDPI.png" gap:platform="android" gap:density="xhdpi" />
+    <!--<gap:splash src="www/screen/splash-LDPI.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="www/screen/splash-MDPI.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="www/screen/splash-HDPI.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="www/screen/splash-XHDPI.png" gap:platform="android" gap:density="xhdpi" />-->
 
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />

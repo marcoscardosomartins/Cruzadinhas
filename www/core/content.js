@@ -16,6 +16,7 @@ var manifest = [
     // opções do menu
     {src : "images/home.png",            type : createjs.LoadQueue.IMAGE, id : "home"},
     {src : "images/info.png",            type : createjs.LoadQueue.IMAGE, id : "info"},
+    {src : "images/infoSmall.png",   type : createjs.LoadQueue.IMAGE, id : "infoSmall"},
     {src : "images/midiaon.png",         type : createjs.LoadQueue.IMAGE, id : "midiaon"},
     {src : "images/midiaoff.png",        type : createjs.LoadQueue.IMAGE, id : "midiaoff"},
     {src : "images/fullscreenon.png",    type : createjs.LoadQueue.IMAGE, id : "fullscreenon"},
@@ -95,7 +96,7 @@ var manifest = [
     {src : "images/word/bateria.png",     type : createjs.LoadQueue.IMAGE, id : "bateria"},
     {src : "images/word/cama.png",        type : createjs.LoadQueue.IMAGE, id : "cama"},
     {src : "images/word/caixa.png",       type : createjs.LoadQueue.IMAGE, id : "caixa"},
-    {src : "images/word/livros.png",      type : createjs.LoadQueue.IMAGE, id : "livros"}/*,
+    {src : "images/word/livros.png",      type : createjs.LoadQueue.IMAGE, id : "livros"},
     // AUDIO
     {src : "audio/fase1.mp3",          type : createjs.LoadQueue.SOUND, id : "fase1"},
     {src : "audio/fase2.mp3",          type : createjs.LoadQueue.SOUND, id : "fase2"},
@@ -118,5 +119,5 @@ var manifest = [
     {src : "audio/marimbamelody.mp3",  type : createjs.LoadQueue.SOUND, id : "musica"},
     {src : "audio/popphoenix.mp3",     type : createjs.LoadQueue.SOUND, id : "pop"},
     {src : "audio/right.mp3",          type : createjs.LoadQueue.SOUND, id : "right"},
-    {src : "audio/wrong.mp3",          type : createjs.LoadQueue.SOUND, id : "wrong"}*/
+    {src : "audio/wrong.mp3",          type : createjs.LoadQueue.SOUND, id : "wrong"}
 ];
